@@ -1,4 +1,6 @@
+import "dotenv/config";
 import dotenv from "dotenv";
+console.log("DATABASE_URL =", process.env.DATABASE_URL);
 import app from "./app.js";
 
 dotenv.config();
