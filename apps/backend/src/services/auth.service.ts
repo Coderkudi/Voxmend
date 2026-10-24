@@ -10,7 +10,7 @@ type RegisterInput = {
 type LoginInput = {
     email: string;
     password: string;
-};
+};loginUser
 
 export async function registerUser(data: RegisterInput) {
     console.log("service reached", data);
