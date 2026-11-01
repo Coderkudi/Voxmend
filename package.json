@@ -1,12 +1,13 @@
 {
   "name": "voxmend",
-  "module": "index.ts",
-  "type": "module",
   "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
+  "packageManager": "pnpm@11.20.0",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint"
   },
-  "peerDependencies": {
-    "typescript": "^5"
+  "devDependencies": {
+    "turbo": "^2.10.8"
   }
 }

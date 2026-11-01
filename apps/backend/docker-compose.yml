@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: voxmend-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: voxmend
+      POSTGRES_PASSWORD: voxmend_dev_password
+      POSTGRES_DB: voxmend
+    ports:
+      - "5432:5432"
+    volumes:
+      - voxmend_postgres_data:/var/lib/postgresql/data
+
+  floci:
+    image: floci/floci:latest
+    container_name: voxmend-floci
+    restart: unless-stopped
+    ports:
+      - "4566:4566"
+    environment:
+      FLOCI_STORAGE_MODE: persistent
+      FLOCI_STORAGE_PERSISTENT_PATH: /app/data
+    volumes:
+      - voxmend_floci_data:/app/data
+
+volumes:
+  voxmend_postgres_data:
+  voxmend_floci_data:
